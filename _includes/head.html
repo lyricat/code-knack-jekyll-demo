@@ -1,0 +1,97 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+  {%- include google-analytics.html -%}
+  {%- endif -%}
+  
+  <link rel="stylesheet" href="/assets/lib/codemirror/codemirror.css">
+  <link rel="stylesheet", href="/assets/lib/codemirror/theme/monokai.css">
+  <script src="/assets/lib/code-knack/code-knack.min.js" type="application/javascript"></script>
+  <script src="/assets/lib/codemirror/codemirror.js" type="application/javascript"></script>
+  <script>
+    var getElements = function () {
+      var eles = []
+      document.querySelectorAll('pre').forEach(function (pre) {
+        if (pre.children.length !== 0 && pre.children[0].tagName === 'CODE') {
+          let ele = pre.children[0]
+          if (/language-.+/.test(ele.className)) {
+            eles.push(ele)
+          }
+        }
+      })
+      console.log(eles)
+      return eles
+    }
+
+    var guessLang = function (ele) {
+      var lang = ele.className.substring(9).toLowerCase()
+      if (lang === 'c') {
+          lang = 'cpp'
+      }
+      console.log('guess lang', lang)
+      return lang
+    }
+    
+    var init = function () {
+      // fetch the languages
+      var langs = Array.prototype.slice.call(document.querySelectorAll('code')).filter(function (x) {
+          return /language-.+/.test(x.className)
+      }).map(function(x) {
+          return x.className.substring(9)
+      })
+      var elements = getElements()
+
+      var codeKnack = new CodeKnack({
+          codeKnackPath: '/assets/lib/code-knack',
+          elements: elements,
+          guessLang: guessLang,
+          enabledLanguages: langs,
+          languages: {
+              'javascript': {
+                  mode: 'browser',
+                  scripts: ['/assets/lib/codemirror/mode/javascript/javascript.js'],
+              },
+              'scheme': {
+                  mode: 'browser',
+                  scripts: ['/assets/lib/codemirror/mode/scheme/scheme.js', '/assets/lib/engines/biwascheme-min.js'],
+              },
+              'cpp': {
+                  mode: 'browser',
+                  scripts: ['/assets/lib/codemirror/mode/clike/clike.js', '/assets/lib/engines/jscpp.es5.min.js'],
+              },
+              'python': {
+                  mode: 'browser',
+                  scripts: ['/assets/lib/codemirror/mode/python/python.js', '/assets/lib/engines/skulpt.min.js', '/assets/lib/engines/skulpt-stdlib.js'],
+              },
+              'ruby': {
+                  mode: 'browser',
+                  scripts: ['/assets/lib/codemirror/mode/ruby/ruby.js', '/assets/lib/engines/opal.js', '/assets/lib/engines/opal-parser.js'],
+              },
+              'go': {
+                  mode: 'view',
+                  scripts: ['/assets/lib/codemirror/mode/go/go.js'],
+              },
+              'rust': {
+                  mode: 'view',
+                  scripts: ['/assets/lib/codemirror/addon/mode/simple.js', '/assets/lib/codemirror/mode/rust/rust.js'],
+              },
+              'css': {
+                  mode: 'view',
+                  scripts: ['/assets/lib/codemirror/mode/css/css.js'],
+              },
+              'php': {
+                  mode: 'view',
+                  scripts: ['/assets/lib/codemirror/mode/xml/xml.js', '/assets/lib/codemirror/mode/php/php.js'],
+              },
+          }
+      })
+      codeKnack.init()
+    }
+    window[ addEventListener ? 'addEventListener' : 'attachEvent' ]( addEventListener ? 'load' : 'onload', init )
+  </script>
+</head>
