@@ -17,10 +17,10 @@
 <script type="application/ld+json">
 {"url":"http://localhost:4000/jekyll/update/2019/01/19/welcome-to-jekyll.html","headline":"Welcome to Jekyll!","dateModified":"2019-01-19T20:34:40+08:00","datePublished":"2019-01-19T20:34:40+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2019/01/19/welcome-to-jekyll.html"},"description":"You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="A Demo blog" /><link rel="stylesheet" href="/assets/lib/codemirror/codemirror.css">
-  <link rel="stylesheet", href="/assets/lib/codemirror/theme/monokai.css">
-  <script src="/assets/lib/code-knack/code-knack.min.js" type="application/javascript"></script>
-  <script src="/assets/lib/codemirror/codemirror.js" type="application/javascript"></script>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="A Demo blog" /><link rel="stylesheet" href="./assets/lib/codemirror/codemirror.css">
+  <link rel="stylesheet", href="./assets/lib/codemirror/theme/monokai.css">
+  <script src="./assets/lib/code-knack/code-knack.min.js" type="application/javascript"></script>
+  <script src="./assets/lib/codemirror/codemirror.js" type="application/javascript"></script>
   <script>
     var getElements = function () {
       var eles = []
@@ -55,46 +55,46 @@
       var elements = getElements()
 
       var codeKnack = new CodeKnack({
-          codeKnackPath: '/assets/lib/code-knack',
+          codeKnackPath: './assets/lib/code-knack',
           elements: elements,
           guessLang: guessLang,
           enabledLanguages: langs,
           languages: {
               'javascript': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/javascript/javascript.js'],
+                  scripts: ['./assets/lib/codemirror/mode/javascript/javascript.js'],
               },
               'scheme': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/scheme/scheme.js', '/assets/lib/engines/biwascheme-min.js'],
+                  scripts: ['./assets/lib/codemirror/mode/scheme/scheme.js', './assets/lib/engines/biwascheme-min.js'],
               },
               'cpp': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/clike/clike.js', '/assets/lib/engines/jscpp.es5.min.js'],
+                  scripts: ['./assets/lib/codemirror/mode/clike/clike.js', './assets/lib/engines/jscpp.es5.min.js'],
               },
               'python': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/python/python.js', '/assets/lib/engines/skulpt.min.js', '/assets/lib/engines/skulpt-stdlib.js'],
+                  scripts: ['./assets/lib/codemirror/mode/python/python.js', './assets/lib/engines/skulpt.min.js', './assets/lib/engines/skulpt-stdlib.js'],
               },
               'ruby': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/ruby/ruby.js', '/assets/lib/engines/opal.js', '/assets/lib/engines/opal-parser.js'],
+                  scripts: ['./assets/lib/codemirror/mode/ruby/ruby.js', './assets/lib/engines/opal.js', './assets/lib/engines/opal-parser.js'],
               },
               'go': {
                   mode: 'view',
-                  scripts: ['/assets/lib/codemirror/mode/go/go.js'],
+                  scripts: ['./assets/lib/codemirror/mode/go/go.js'],
               },
               'rust': {
                   mode: 'view',
-                  scripts: ['/assets/lib/codemirror/addon/mode/simple.js', '/assets/lib/codemirror/mode/rust/rust.js'],
+                  scripts: ['./assets/lib/codemirror/addon/mode/simple.js', './assets/lib/codemirror/mode/rust/rust.js'],
               },
               'css': {
                   mode: 'view',
-                  scripts: ['/assets/lib/codemirror/mode/css/css.js'],
+                  scripts: ['./assets/lib/codemirror/mode/css/css.js'],
               },
               'php': {
                   mode: 'view',
-                  scripts: ['/assets/lib/codemirror/mode/xml/xml.js', '/assets/lib/codemirror/mode/php/php.js'],
+                  scripts: ['./assets/lib/codemirror/mode/xml/xml.js', './assets/lib/codemirror/mode/php/php.js'],
               },
           }
       })

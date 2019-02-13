@@ -15,10 +15,10 @@
 <script type="application/ld+json">
 {"url":"http://localhost:4000/","headline":"A Demo blog","name":"A Demo blog","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="A Demo blog" /><link rel="stylesheet" href="/assets/lib/codemirror/codemirror.css">
-  <link rel="stylesheet", href="/assets/lib/codemirror/theme/monokai.css">
-  <script src="/assets/lib/code-knack/code-knack.min.js" type="application/javascript"></script>
-  <script src="/assets/lib/codemirror/codemirror.js" type="application/javascript"></script>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="A Demo blog" /><link rel="stylesheet" href="./assets/lib/codemirror/codemirror.css">
+  <link rel="stylesheet", href="./assets/lib/codemirror/theme/monokai.css">
+  <script src="./assets/lib/code-knack/code-knack.min.js" type="application/javascript"></script>
+  <script src="./assets/lib/codemirror/codemirror.js" type="application/javascript"></script>
   <script>
     var getElements = function () {
       var eles = []
@@ -53,46 +53,46 @@
       var elements = getElements()
 
       var codeKnack = new CodeKnack({
-          codeKnackPath: '/assets/lib/code-knack',
+          codeKnackPath: './assets/lib/code-knack',
           elements: elements,
           guessLang: guessLang,
           enabledLanguages: langs,
           languages: {
               'javascript': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/javascript/javascript.js'],
+                  scripts: ['./assets/lib/codemirror/mode/javascript/javascript.js'],
               },
               'scheme': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/scheme/scheme.js', '/assets/lib/engines/biwascheme-min.js'],
+                  scripts: ['./assets/lib/codemirror/mode/scheme/scheme.js', './assets/lib/engines/biwascheme-min.js'],
               },
               'cpp': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/clike/clike.js', '/assets/lib/engines/jscpp.es5.min.js'],
+                  scripts: ['./assets/lib/codemirror/mode/clike/clike.js', './assets/lib/engines/jscpp.es5.min.js'],
               },
               'python': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/python/python.js', '/assets/lib/engines/skulpt.min.js', '/assets/lib/engines/skulpt-stdlib.js'],
+                  scripts: ['./assets/lib/codemirror/mode/python/python.js', './assets/lib/engines/skulpt.min.js', './assets/lib/engines/skulpt-stdlib.js'],
               },
               'ruby': {
                   mode: 'browser',
-                  scripts: ['/assets/lib/codemirror/mode/ruby/ruby.js', '/assets/lib/engines/opal.js', '/assets/lib/engines/opal-parser.js'],
+                  scripts: ['./assets/lib/codemirror/mode/ruby/ruby.js', './assets/lib/engines/opal.js', './assets/lib/engines/opal-parser.js'],
               },
               'go': {
                   mode: 'view',
-                  scripts: ['/assets/lib/codemirror/mode/go/go.js'],
+                  scripts: ['./assets/lib/codemirror/mode/go/go.js'],
               },
               'rust': {
                   mode: 'view',
-                  scripts: ['/assets/lib/codemirror/addon/mode/simple.js', '/assets/lib/codemirror/mode/rust/rust.js'],
+                  scripts: ['./assets/lib/codemirror/addon/mode/simple.js', './assets/lib/codemirror/mode/rust/rust.js'],
               },
               'css': {
                   mode: 'view',
-                  scripts: ['/assets/lib/codemirror/mode/css/css.js'],
+                  scripts: ['./assets/lib/codemirror/mode/css/css.js'],
               },
               'php': {
                   mode: 'view',
-                  scripts: ['/assets/lib/codemirror/mode/xml/xml.js', '/assets/lib/codemirror/mode/php/php.js'],
+                  scripts: ['./assets/lib/codemirror/mode/xml/xml.js', './assets/lib/codemirror/mode/php/php.js'],
               },
           }
       })
