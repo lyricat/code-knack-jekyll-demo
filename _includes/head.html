@@ -3,16 +3,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
-  <link rel="stylesheet" href="{{ "./assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="/code-knack-jekyll-demo/assets/main.css">
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include google-analytics.html -%}
   {%- endif -%}
   
-  <link rel="stylesheet" href="./assets/lib/codemirror/codemirror.css">
-  <link rel="stylesheet", href="./assets/lib/codemirror/theme/monokai.css">
-  <script src="./assets/lib/code-knack/code-knack.min.js" type="application/javascript"></script>
-  <script src="./assets/lib/codemirror/codemirror.js" type="application/javascript"></script>
+  <link rel="stylesheet" href="/code-knack-jekyll-demo/assets/lib/codemirror/codemirror.css">
+  <link rel="stylesheet", href="/code-knack-jekyll-demo/assets/lib/codemirror/theme/monokai.css">
+  <script src="/code-knack-jekyll-demo/assets/lib/code-knack/code-knack.min.js" type="application/javascript"></script>
+  <script src="/code-knack-jekyll-demo/assets/lib/codemirror/codemirror.js" type="application/javascript"></script>
   <script>
     var getElements = function () {
       var eles = []
@@ -47,46 +47,46 @@
       var elements = getElements()
 
       var codeKnack = new CodeKnack({
-          codeKnackPath: './assets/lib/code-knack',
+          codeKnackPath: '/code-knack-jekyll-demo/assets/lib/code-knack',
           elements: elements,
           guessLang: guessLang,
           enabledLanguages: langs,
           languages: {
               'javascript': {
                   mode: 'browser',
-                  scripts: ['./assets/lib/codemirror/mode/javascript/javascript.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/mode/javascript/javascript.js'],
               },
               'scheme': {
                   mode: 'browser',
-                  scripts: ['./assets/lib/codemirror/mode/scheme/scheme.js', './assets/lib/engines/biwascheme-min.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/mode/scheme/scheme.js', '/code-knack-jekyll-demo/assets/lib/engines/biwascheme-min.js'],
               },
               'cpp': {
                   mode: 'browser',
-                  scripts: ['./assets/lib/codemirror/mode/clike/clike.js', './assets/lib/engines/jscpp.es5.min.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/mode/clike/clike.js', '/code-knack-jekyll-demo/assets/lib/engines/jscpp.es5.min.js'],
               },
               'python': {
                   mode: 'browser',
-                  scripts: ['./assets/lib/codemirror/mode/python/python.js', './assets/lib/engines/skulpt.min.js', './assets/lib/engines/skulpt-stdlib.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/mode/python/python.js', '/code-knack-jekyll-demo/assets/lib/engines/skulpt.min.js', '/code-knack-jekyll-demo/assets/lib/engines/skulpt-stdlib.js'],
               },
               'ruby': {
                   mode: 'browser',
-                  scripts: ['./assets/lib/codemirror/mode/ruby/ruby.js', './assets/lib/engines/opal.js', './assets/lib/engines/opal-parser.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/mode/ruby/ruby.js', '/code-knack-jekyll-demo/assets/lib/engines/opal.js', '/code-knack-jekyll-demo/assets/lib/engines/opal-parser.js'],
               },
               'go': {
                   mode: 'view',
-                  scripts: ['./assets/lib/codemirror/mode/go/go.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/mode/go/go.js'],
               },
               'rust': {
                   mode: 'view',
-                  scripts: ['./assets/lib/codemirror/addon/mode/simple.js', './assets/lib/codemirror/mode/rust/rust.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/addon/mode/simple.js', '/code-knack-jekyll-demo/assets/lib/codemirror/mode/rust/rust.js'],
               },
               'css': {
                   mode: 'view',
-                  scripts: ['./assets/lib/codemirror/mode/css/css.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/mode/css/css.js'],
               },
               'php': {
                   mode: 'view',
-                  scripts: ['./assets/lib/codemirror/mode/xml/xml.js', './assets/lib/codemirror/mode/php/php.js'],
+                  scripts: ['/code-knack-jekyll-demo/assets/lib/codemirror/mode/xml/xml.js', '/code-knack-jekyll-demo/assets/lib/codemirror/mode/php/php.js'],
               },
           }
       })
